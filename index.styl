@@ -1,0 +1,47 @@
+@require 'nib'
+
+colors = {
+  bg: maroon
+}
+
+size = {
+  innerCircle: unit(70, 'px')
+  outerCircle: unit(120, 'px')
+  diagonalWidth: unit(220, 'px')
+  diagonalHeight: unit(20, 'px')
+}
+
+centered-absolute()
+  position: absolute
+  transform: translate(-50%, -50%)
+  left: 50%
+  top: 50%
+  
+.zoo-logo
+  background: whitesmoke
+  width: 400px
+  height: 400px
+  position: relative
+
+  .zoo-logo-outer-circle
+    centered-absolute()
+    border-radius: 50%
+    background: transparent
+    width: size.outerCircle
+    height: size.outerCircle
+    border: 25px solid colors.bg
+
+  .zoo-logo-inner-circle
+    centered-absolute()
+    border-radius 50%
+    background: colors.bg
+    width: size.innerCircle
+    height: size.innerCircle
+
+  .zoo-logo-diagonal
+    centered-absolute()
+    border-radius: 50%
+    background: colors.bg
+    width: size.diagonalWidth
+    height: size.diagonalHeight
+    transform: translate(-50%, -50%) rotate(-45deg)
