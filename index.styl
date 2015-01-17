@@ -6,7 +6,7 @@ colors = {
 
 size = {
   innerCircle: unit(70, 'px')
-  outerCircle: unit(120, 'px')
+  outerCircle: unit(170, 'px')
   diagonalWidth: unit(220, 'px')
   diagonalHeight: unit(20, 'px')
 }
@@ -16,28 +16,24 @@ centered-absolute()
   transform: translate(-50%, -50%)
   left: 50%
   top: 50%
-  
+
 .zoo-logo
-  width: 400px
-  height: 400px
   position: relative
-
-  .zoo-logo-outer-circle
-    centered-absolute()
-    border-radius: 50%
-    background: transparent
-    width: size.outerCircle
-    height: size.outerCircle
-    border: 25px solid colors.bg
-
-  .zoo-logo-inner-circle
+  border-radius: 50%
+  background: transparent
+  width: size.outerCircle
+  height: size.outerCircle
+  box-shadow: inset 0 0 0 25px colors.bg
+  &::before
+    content: ""
     centered-absolute()
     border-radius 50%
     background: colors.bg
     width: size.innerCircle
     height: size.innerCircle
-
-  .zoo-logo-diagonal
+    float: left
+  &::after
+    content: ""
     centered-absolute()
     border-radius: 50%
     background: colors.bg
