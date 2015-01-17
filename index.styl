@@ -1,42 +1,42 @@
 @require 'nib'
 
-colors = {
-  bg: maroon
-}
-
-size = {
-  innerCircle: unit(70, 'px')
-  outerCircle: unit(170, 'px')
-  diagonalWidth: unit(220, 'px')
-  diagonalHeight: unit(20, 'px')
-}
-
 centered-absolute()
   position: absolute
   transform: translate(-50%, -50%)
   left: 50%
   top: 50%
 
-.zoo-logo
+hypotnuse(n)
+  math(((n ** 2) * 2), 'sqrt')
+
+zoo-logo(size = 25px, color = black)
+  // outer circle
   position: relative
   border-radius: 50%
   background: transparent
-  width: size.outerCircle
-  height: size.outerCircle
-  box-shadow: inset 0 0 0 25px colors.bg
+  width: unit(size, 'px')
+  height: unit(size, 'px')
+  box-shadow: inset 0 0 0 unit(size * .15, 'px') color
+
   &::before
+    // inner circle
     content: ""
     centered-absolute()
     border-radius 50%
-    background: colors.bg
-    width: size.innerCircle
-    height: size.innerCircle
+    background: color
+    width: unit(size * .4, 'px')
+    height: unit(size * .4, 'px')
     float: left
+
   &::after
+    // diagonal
     content: ""
     centered-absolute()
     border-radius: 50%
-    background: colors.bg
-    width: size.diagonalWidth
-    height: size.diagonalHeight
+    background: color
+    width: unit(hypotnuse(size), 'px')
+    height: unit(size * .15, 'px')
     transform: translate(-50%, -50%) rotate(-45deg)
+
+.zoo-logo
+  zoo-logo(300px, royalblue)
