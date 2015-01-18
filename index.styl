@@ -1,12 +1,12 @@
 @require 'nib'
 
-centered-absolute()
+_centered-absolute()
   position: absolute
   transform: translate(-50%, -50%)
   left: 50%
   top: 50%
 
-hypotnuse(n)
+_hypotnuse(n)
   math(((n ** 2) * 2), 'sqrt')
 
 zoo-logo(size = 25px, color = black)
@@ -21,7 +21,7 @@ zoo-logo(size = 25px, color = black)
   &::before
     // inner circle
     content: ""
-    centered-absolute()
+    _centered-absolute()
     border-radius 50%
     background: color
     width: unit(size * .4, 'px')
@@ -31,10 +31,10 @@ zoo-logo(size = 25px, color = black)
   &::after
     // diagonal
     content: ""
-    centered-absolute()
+    _centered-absolute()
     border-radius: 50%
     background: color
-    width: unit(hypotnuse(size), 'px')
+    width: unit(_hypotnuse(size), 'px')
     height: unit(size * .15, 'px')
     transform: translate(-50%, -50%) rotate(-45deg)
 
