@@ -1,6 +1,6 @@
 {
-  "name": "zoologo",
-  "version": "1.0.0",
+  "name": "zoo-logo",
+  "version": "0.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -9,7 +9,7 @@
   },
   "author": "",
   "license": "ISC",
-  "devDependencies": {
+  "dependencies": {
     "nib": "^1.0.4",
     "stylus": "^0.49.3"
   }
